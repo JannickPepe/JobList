@@ -1,0 +1,13 @@
+{
+  "name": "jannickmern",
+  "version": "1.0.0",
+  "description": "Personal MERN",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "jannick pedersen",
+  "license": "ISC"
+}
