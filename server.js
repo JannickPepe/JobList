@@ -10,17 +10,16 @@ const app = express();
 import morgan from 'morgan';
 // SETUP MONGOOSE
 import mongoose from 'mongoose';
-// ROUTERS
-import jobRouter from "./routes/jobRouter.js";
 // MIDDLEWARERES
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
+// ROUTERS
+import jobRouter from "./routes/jobRouter.js";
+import authRouter from "./routes/authRouter.js"
 
 
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
-
-app.use(morgan('dev'));
 
 // SETUP THE MIDDLEWARE
 app.use(express.json());
@@ -31,25 +30,16 @@ app.get('/', (req, res) => {
 
 });
 
-app.post('/', (req, res) => {
-
-    console.log(req);
-
-    res.json({ message: 'Data received', data: req.body });
-    
-});
-
 // API ROUTE
 app.use('/api/v1/jobs', jobRouter);
+app.use('/api/v1/auth', authRouter);
 
-// All the URL's with the * error 404
-// the "not found" middleware is specifically designed to handle requests for non-existent routes
+// All the URL's with the * error 404 - the "not found" middleware is specifically designed to handle requests for non-existent routes
 app.use('*', (req, res) => {
     res.status(404).json({ msg: 'not found' });
 });
 
-// MiddleWare error for 500
-// the "error" middleware is a catch-all for handling unexpected errors that occur during request processing.
+// MiddleWare error for 500 - the "error" middleware is a catch-all for handling unexpected errors that occur during request processing.
 app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 5100;
