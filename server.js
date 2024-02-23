@@ -12,6 +12,9 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 // MIDDLEWARERES
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
+import { authenticateUser } from './middleware/authMiddleware.js';
+// IMPORT COOKIE PARSER
+import cookieParser from 'cookie-parser';
 // ROUTERS
 import jobRouter from "./routes/jobRouter.js";
 import authRouter from "./routes/authRouter.js"
@@ -20,6 +23,9 @@ import authRouter from "./routes/authRouter.js"
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
+
+// SETUP COOKIE PARSER
+app.use(cookieParser());
 
 // SETUP THE MIDDLEWARE
 app.use(express.json());
@@ -31,7 +37,7 @@ app.get('/', (req, res) => {
 });
 
 // API ROUTE
-app.use('/api/v1/jobs', jobRouter);
+app.use('/api/v1/jobs', authenticateUser, jobRouter);
 app.use('/api/v1/auth', authRouter);
 
 // All the URL's with the * error 404 - the "not found" middleware is specifically designed to handle requests for non-existent routes
