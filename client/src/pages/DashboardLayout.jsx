@@ -1,17 +1,31 @@
 
 import { useState, createContext, useContext } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, redirect, useLoaderData, useNavigate } from 'react-router-dom';
+import customFetch from '../utils/customFetch';
 import Wrapper from '../assets/wrappers/Dashboard';
 import { Navbar, BigSidebar, SmallSidebar } from '../components';
 import { checkDefaultTheme } from '../App';
+import { toast } from 'react-toastify';
+
+export const loader = async () => {
+
+    try {
+        const { data } = await customFetch.get('/users/current-user');
+        return data;
+    } catch (error) {
+        return redirect('/');
+    }
+
+};
 
 
 const DashboardContext = createContext();
 
 const DashboardLayout = () => {
 
-    // temp
-    const user = { name: 'jannick' };
+    const { user } = useLoaderData();
+
+    const navigate = useNavigate();
 
     const [showSidebar, setShowSidebar] = useState(false);
     const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
@@ -28,7 +42,9 @@ const DashboardLayout = () => {
     };
 
     const logoutUser = async () => {
-        console.log('logout user');
+        navigate('/');
+        await customFetch.get('/auth/logout');
+        toast.success('Logging out...');
     };
 
 
@@ -36,14 +52,14 @@ const DashboardLayout = () => {
         <DashboardContext.Provider value={{ user, showSidebar, isDarkTheme, toggleDarkTheme, toggleSidebar, logoutUser, }} >
             <Wrapper>
                 <main className='dashboard'>
-                <SmallSidebar />
-                <BigSidebar />
-                <div>
-                    <Navbar />
-                    <div className='dashboard-page'>
-                    <Outlet />
+                    <SmallSidebar />
+                    <BigSidebar />
+                    <div>
+                        <Navbar />
+                        <div className='dashboard-page'>
+                            <Outlet context={{user}} />
+                        </div>
                     </div>
-                </div>
                 </main>
             </Wrapper>
         </DashboardContext.Provider>
