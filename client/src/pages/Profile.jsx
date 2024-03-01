@@ -1,8 +1,8 @@
 
-import { FormRow } from '../components';
+import { FormRow, SubmitBtn } from '../components';
 import Wrapper from '../assets/wrappers/DashboardFormPage';
 import { useOutletContext } from 'react-router-dom';
-import { useNavigation, Form } from 'react-router-dom';
+import { Form } from 'react-router-dom';
 import customFetch from '../utils/customFetch';
 import { toast } from 'react-toastify';
 
@@ -30,8 +30,7 @@ const Profile = () => {
 
     const { user } = useOutletContext();
     const { name, lastName, email, location } = user;
-    const navigation = useNavigation();
-    const isSubmitting = navigation.state === 'submitting';
+
 
     return (
         <Wrapper>
@@ -55,13 +54,8 @@ const Profile = () => {
                     <FormRow type='text' labelText='last name' name='lastName' defaultValue={lastName} />
                     <FormRow type='email' name='email' defaultValue={email} />
                     <FormRow type='text' name='location' defaultValue={location} />
-                    <button
-                        className='btn btn-block form-btn'
-                        type='submit'
-                        disabled={isSubmitting}
-                    >
-                        {isSubmitting ? 'submitting...' : 'save changes'}
-                    </button>
+                
+                    <SubmitBtn />
                 </div>
             </Form>
         </Wrapper>

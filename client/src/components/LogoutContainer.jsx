@@ -16,7 +16,8 @@ const LogoutContainer = () => {
       >
         {user.avatar ? (
           <img src={user.avatar} alt='avatar' className='img' />
-        ) : (
+        ) 
+        : (
           <FaUserCircle />
         )}
         {user?.name}
