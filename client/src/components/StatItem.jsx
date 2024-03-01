@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import Wrapper from '../assets/wrappers/StatItem';
 
