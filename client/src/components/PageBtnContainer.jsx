@@ -1,6 +1,6 @@
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
 import Wrapper from '../assets/wrappers/PageBtnContainer';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAllJobsContext } from '../pages/AllJobs';
 
 
@@ -85,8 +85,7 @@ const PageBtnContainer = () => {
                     handlePageChange(prevPage);
                 }}
             >
-                <HiChevronDoubleLeft />
-                prev
+                <HiChevronDoubleLeft size={20} />
             </button>
             <div className='btn-container'>{renderPageButtons()}</div>
             <button
@@ -97,8 +96,7 @@ const PageBtnContainer = () => {
                     handlePageChange(nextPage);
                 }}
             >
-                next
-                <HiChevronDoubleRight />
+                <HiChevronDoubleRight size={20} />
             </button>
         </Wrapper>
     );

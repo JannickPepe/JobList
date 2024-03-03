@@ -5,7 +5,7 @@ const Wrapper = styled.section`
   margin-top: 2rem;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   .btn-container {
@@ -22,7 +22,7 @@ const Wrapper = styled.section`
     font-size: 1.25rem;
     color: var(--primary-500);
     border-radius: var(--border-radius);
-    cursor:pointer:
+    cursor:pointer;
   }
   .active{
     background:var(--primary-500);
@@ -34,21 +34,21 @@ const Wrapper = styled.section`
     border-color: transparent;
         border-radius: var(--border-radius);
 
-    width: 100px;
+    width: 60px;
     height: 40px;
-        color: var(--primary-500);
-text-transform:capitalize;
-letter-spacing:var(--letter-spacing);
-display:flex;
-align-items:center;
-justify-content:center;
-gap:0.5rem;
-cursor:pointer;
+    color: var(--primary-500);
+    text-transform:capitalize;
+    letter-spacing:var(--letter-spacing);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.5rem;
+    cursor:pointer;
   }
   .prev-btn:hover,.next-btn:hover{
     background:var(--primary-500);
-        color: var(--white);
-        transition:var(--transition);
+    color: var(--white);
+    transition:var(--transition);
   }
 .dots{
   display:grid;
@@ -56,4 +56,5 @@ cursor:pointer;
   cursor:text;
 }
 `;
+
 export default Wrapper;
