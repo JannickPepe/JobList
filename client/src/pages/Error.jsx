@@ -5,7 +5,6 @@ import img from '../assets/images/not-found.svg';
 import Wrapper from '../assets/wrappers/ErrorPage';
 
 
-
 const Error = () => {
 
     const error = useRouteError();
@@ -24,12 +23,11 @@ const Error = () => {
         );
     }
 
-
     return (
         <Wrapper>
-        <div>
-            <h3>something went wrong</h3>
-        </div>
+            <div>
+                <h3>something went wrong</h3>
+            </div>
         </Wrapper>
     );
 

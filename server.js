@@ -12,6 +12,9 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 // CLOUDINARY
 import cloudinary from 'cloudinary';
+// IMPORT HELMET
+import helmet from 'helmet';
+import mongoSanitize from 'express-mongo-sanitize';
 // MIDDLEWARERES
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 import { authenticateUser } from './middleware/authMiddleware.js';
@@ -45,17 +48,9 @@ app.use(express.static(path.resolve(__dirname, './client/dist')));
 app.use(cookieParser());
 // SETUP THE MIDDLEWARE
 app.use(express.json());
+app.use(helmet());
+app.use(mongoSanitize());
 
-app.get('/', (req, res) => {
-
-    res.send('Hello World');
-
-});
-
-// TEST API ROUTE
-app.get('/api/v1/test', (req, res) => {
-    res.json({ msg: 'test route' });
-});
 
 // API ROUTE
 app.use('/api/v1/jobs', authenticateUser, jobRouter);
