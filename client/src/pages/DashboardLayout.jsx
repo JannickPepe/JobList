@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { Outlet, redirect, useNavigate, useNavigation } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/Dashboard';

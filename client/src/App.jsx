@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HomeLayout, Landing, Register, Login, DashboardLayout, Error, AddJob, Stats, AllJobs, Profile, Admin, EditJob, } from './pages';
@@ -61,16 +62,16 @@ const router = createBrowserRouter([
         element: <DashboardLayout queryClient={queryClient} />,
         loader: dashboardLoader(queryClient),
         children: [
-          {
-            index: true,
-            element: <AddJob />,
-            action: addJobAction(queryClient),
-          },
           { 
-            path: 'stats', 
+            index: true,
             element: <Stats />,
             loader: statsLoader(queryClient),
             errorElement: <ErrorElement />,
+          },
+          {
+            path: 'add-job',
+            element: <AddJob />,
+            action: addJobAction(queryClient),
           },
           {
             path: 'all-jobs',

@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 
 import { FormRow , FormRowSelect, SubmitBtn } from '../components';
 import Wrapper from '../assets/wrappers/DashboardFormPage';
@@ -17,7 +18,7 @@ export const action = (queryClient) => async ({ request }) => {
         await customFetch.post('/jobs', data);
         queryClient.invalidateQueries(['jobs']);
         toast.success('Job added successfully');
-        return redirect('all-jobs');
+        return redirect('/dashboard/all-jobs');
     } catch (error) {
         toast.error(error?.response?.data?.msg);
         return error;

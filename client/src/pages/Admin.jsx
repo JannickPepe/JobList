@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 
 import { FaSuitcaseRolling, FaCalendarCheck } from 'react-icons/fa';
 import { useLoaderData, redirect } from 'react-router-dom';

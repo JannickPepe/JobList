@@ -7,19 +7,19 @@ import { MdAdminPanelSettings } from 'react-icons/md';
 
 const links = [
   {
-    text: 'add job',
+    text: 'stats',
     path: '.',
+    icon: <IoBarChartSharp />,
+  },
+  {
+    text: 'add job',
+    path: 'add-job',
     icon: <FaWpforms />,
   },
   {
     text: 'all jobs',
     path: 'all-jobs',
     icon: <MdQueryStats />,
-  },
-  {
-    text: 'stats',
-    path: 'stats',
-    icon: <IoBarChartSharp />,
   },
   {
     text: 'profile',
