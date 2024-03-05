@@ -77,7 +77,7 @@ const port = process.env.PORT || 5100;
 try {
         await mongoose.connect(process.env.MONGO_URL);
         app.listen(port, () => {
-            console.log(`server running on PORT ${port}....`);
+            console.log(`SERVER running on PORT ${port}....`);
         });
     } catch (error) {
     console.log(error);
