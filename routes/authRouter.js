@@ -5,7 +5,10 @@ import { validateRegisterInput, validateLoginInput } from '../middleware/validat
 import rateLimiter from 'express-rate-limit';
 
 const apiLimiter = rateLimiter({
-    validate: {xForwardedForHeader: false},
+    validate: {
+		validationsConfig: false,
+		default: true,
+	},
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 5,
     message: { msg: 'IP rate limit exceeded, retry in 15 minutes.' },
