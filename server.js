@@ -48,7 +48,28 @@ app.use(express.static(path.resolve(__dirname, './client/dist')));
 app.use(cookieParser());
 // SETUP THE MIDDLEWARE
 app.use(express.json());
-app.use(helmet());
+app.use(
+    helmet({
+        contentSecurityPolicy: {
+            directives: {
+                
+                "media-src": ["'self'", "data:"],
+                
+                "default-src": ["'self'", "data:"],
+
+                "script-src": ["'self'", "'unsafe-eval'", "'unsafe-inline'", "data:"],
+
+                "img-src": ["'self'", "'unsafe-inline'", "data:"],
+
+                "font-src": ["'self'", "'unsafe-inline'", "https://pro.fontawesome.com/", "https://fonts.gstatic.com/"],
+
+                "connect-src": ["'self'", ],
+                
+                "frame-src": ["'self'", "https://youtube.com", "https://www.youtube.com"]
+            }
+    }
+    })
+);
 app.use(mongoSanitize());
 
 
