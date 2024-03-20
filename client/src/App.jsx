@@ -1,16 +1,23 @@
 /* eslint-disable react-refresh/only-export-components */
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { HomeLayout, Landing, Register, Login, DashboardLayout, Error, AddJob, Stats, AllJobs, Profile, Admin, EditJob, } from './pages';
+import { HomeLayout, Landing, Register, Login, DashboardLayout, Error, 
+  AddJob, Stats, AllJobs, Profile, Admin, EditJob, AddFaq, AllFaqs, EditFaq, 
+} from './pages';
 
 import { action as registerAction } from './pages/Register';
 import { action as loginAction } from './pages/Login';
 import { loader as dashboardLoader } from './pages/DashboardLayout';
-import { action as addJobAction } from './pages/AddJob';
-import { loader as allJobsLoader } from './pages/AllJobs';
-import { loader as editJobLoader } from './pages/EditJob';
-import { action as editJobAction } from './pages/EditJob';
-import { action as deleteJobAction } from './pages/DeleteJob';
+import { action as addJobAction } from './pages/Job/AddJob';
+import { loader as allJobsLoader } from './pages/Job/AllJobs';
+import { loader as editJobLoader } from './pages/Job/EditJob';
+import { action as editJobAction } from './pages/Job/EditJob';
+import { action as deleteJobAction } from './pages/Job/DeleteJob';
+import { action as addFaqAction } from './pages/FAQ/AddFaq';
+import { loader as allFaqsLoader } from './pages/FAQ/AllFaqs';
+import { loader as editFaqLoader } from './pages/FAQ/EditFaq';
+import { action as editFaqAction } from './pages/FAQ/EditFaq';
+import { action as deleteFaqAction } from './pages/FAQ/DeleteFaq';
 import { loader as adminLoader } from './pages/Admin';
 import { action as profileAction } from './pages/Profile';
 import { loader as statsLoader } from './pages/Stats';
@@ -79,7 +86,17 @@ const router = createBrowserRouter([
             loader: allJobsLoader(queryClient),
             errorElement: <ErrorElement />
           },
-
+          {
+            path: 'add-faq',
+            element: <AddFaq />,
+            action: addFaqAction(queryClient),
+          },
+          {
+            path: 'all-faqs',
+            element: <AllFaqs />,
+            loader: allFaqsLoader(queryClient),
+            errorElement: <ErrorElement />
+          },
           {
             path: 'profile',
             element: <Profile />,
@@ -99,6 +116,16 @@ const router = createBrowserRouter([
           { 
             path: 'delete-job/:id', 
             action: deleteJobAction(queryClient), 
+          },
+          {
+            path: 'edit-faq/:id',
+            element: <EditFaq />,
+            loader: editFaqLoader(queryClient),
+            action: editFaqAction(queryClient),
+          },
+          { 
+            path: 'delete-faq/:id', 
+            action: deleteFaqAction(queryClient), 
           },
         ],
       },

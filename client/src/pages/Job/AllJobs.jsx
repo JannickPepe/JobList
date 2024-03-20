@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
-import { JobsContainer, SearchContainer } from '../components';
-import customFetch from '../utils/customFetch';
+import { JobsContainer, SearchContainer } from '../../components';
+import customFetch from '../../utils/customFetch';
 import { useLoaderData } from 'react-router-dom';
 import { useContext, createContext } from 'react';
 import { useQuery } from '@tanstack/react-query';

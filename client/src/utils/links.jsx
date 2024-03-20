@@ -22,6 +22,16 @@ const links = [
     icon: <MdQueryStats />,
   },
   {
+    text: 'add faq',
+    path: 'add-faq',
+    icon: <FaWpforms />,
+  },
+  {
+    text: 'all faqs',
+    path: 'all-faqs',
+    icon: <MdQueryStats />,
+  },
+  {
     text: 'profile',
     path: 'profile',
     icon: <ImProfile />,

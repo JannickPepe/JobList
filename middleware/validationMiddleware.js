@@ -4,6 +4,7 @@ import { body, param , validationResult } from 'express-validator';
 import { BadRequestError, NotFoundError, UnauthorizedError } from '../errors/customErrors.js';
 import { JOB_STATUS, JOB_TYPE } from '../utils/constants.js';
 import Job from '../models/JobModel.js';
+import Faq from '../models/FaqModel.js';
 import User from '../models/UserModel.js';
 
 
@@ -18,6 +19,10 @@ const withValidationErrors = (validateValues) => {
                 const errorMessages = errors.array().map((error) => error.msg);
 
                 if (errorMessages[0].startsWith('no job')) {
+                    throw new NotFoundError(errorMessages);
+                }
+
+                if (errorMessages[0].startsWith('no faq')) {
                     throw new NotFoundError(errorMessages);
                 }
 
@@ -46,17 +51,40 @@ export const validateJobInput = withValidationErrors([
 ]);
 
 //
+export const validateFaqInput = withValidationErrors([
+    body('title').notEmpty().withMessage('title is required'),
+    body('text').notEmpty().withMessage('text is required'),
+]);
+
+//
 export const validateIdParam = withValidationErrors([
     param('id').custom(async (value, { req }) => {
         const isValidMongoId = mongoose.Types.ObjectId.isValid(value);
 
         if (!isValidMongoId) throw new BadRequestError('invalid MongoDB id');
         const job = await Job.findById(value);
-
         if (!job) throw new NotFoundError(`no job with id : ${value}`);
 
         const isAdmin = req.user.role === 'admin';
         const isOwner = req.user.userId === job.createdBy.toString()
+        
+        if(!isAdmin && !isOwner) throw new UnauthorizedError('not authorized to access this route')
+    }),
+]);
+
+//
+export const validateIdFaqParam = withValidationErrors([
+    param('id').custom(async (value, { req }) => {
+        const isValidMongoId = mongoose.Types.ObjectId.isValid(value);
+
+
+        if (!isValidMongoId) throw new BadRequestError('invalid MongoDB id');
+        const faq = await Faq.findById(value);
+        if (!faq) throw new NotFoundError(`no faq with id : ${value}`);
+
+        const isAdmin = req.user.role === 'admin';
+        const isOwner = req.user.userId === faq.createdBy.toString()
+        
         if(!isAdmin && !isOwner) throw new UnauthorizedError('not authorized to access this route')
     }),
 ]);

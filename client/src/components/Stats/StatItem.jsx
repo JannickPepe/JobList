@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import Wrapper from '../assets/wrappers/StatItem';
+import Wrapper from '../../assets/wrappers/StatItem';
 
 const StatItem = ({ count, title, icon, color, bcg }) => {
 

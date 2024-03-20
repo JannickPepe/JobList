@@ -1,12 +1,12 @@
 /* eslint-disable react-refresh/only-export-components */
 
-import { FormRow , FormRowSelect, SubmitBtn } from '../components';
-import Wrapper from '../assets/wrappers/DashboardFormPage';
+import { FormRow , FormRowSelect, SubmitBtn } from '../../components';
+import Wrapper from '../../assets/wrappers/DashboardFormPage';
 import { useOutletContext } from 'react-router-dom';
-import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
+import { JOB_STATUS, JOB_TYPE } from '../../../../utils/constants';
 import { Form, redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import customFetch from '../utils/customFetch';
+import customFetch from '../../utils/customFetch';
 
 
 export const action = (queryClient) => async ({ request }) => {
