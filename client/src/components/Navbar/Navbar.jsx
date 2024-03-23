@@ -16,13 +16,15 @@ const NavbarNew = () => {
       <div className="container px-4 mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
-            <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
-            <span className="text-xl tracking-tight">JobList</span>
+            <a href="/" className="flex items-center hover:scale-110">
+              <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
+              <span className="text-xl tracking-tight">JobList</span>
+            </a>
           </div>
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item, index) => (
-              <li key={index}>
-                <a href={item.href}>{item.label}</a>
+              <li className="hover:scale-110" key={index}>
+                <a className="text-base font-semibold hover:text-red-800" href={item.href}>{item.label}</a>
               </li>
             ))}
           </ul>
@@ -50,15 +52,12 @@ const NavbarNew = () => {
               ))}
             </ul>
             <div className="flex space-x-6">
-              <a href="#" className="py-2 px-3 border rounded-md">
+              <Link to='/login' className="py-2 px-3 border rounded-md">
                 Sign In
-              </a>
-              <a
-                href="#"
-                className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800"
-              >
-                Create an account
-              </a>
+              </Link>
+              <Link to='/register' className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800">
+                Register today
+              </Link>
             </div>
           </div>
         )}
