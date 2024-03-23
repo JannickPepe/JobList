@@ -3,14 +3,31 @@ import Faq from '../models/FaqModel.js';
 import { StatusCodes } from "http-status-codes";
 
 
+// CREATE FAQ
+export const createFaq = async (req, res) => {
+    req.body.createdBy = req.user.userId;
+    const faq = await Faq.create(req.body);
 
-// GET ALL JOBS
+    res.status(StatusCodes.CREATED).json({ faq });
+};
+
+
+// GET FAQ
+export const getFaq = async (req, res) => {
+    const faq = await Faq.findById(req.params.id);
+
+    res.status(StatusCodes.OK).json({ faq });
+};
+
+
+// GET ALL FAQS
 export const getAllFaqs = async (req, res) => {
 
     const { search, sort } = req.query;
 
+    // disable - so every user can see the FAQS
     const queryObject = {
-        createdBy: req.user.userId,
+        // createdBy: req.user.userId,
     };
     
     if (search) {
@@ -46,20 +63,6 @@ export const getAllFaqs = async (req, res) => {
 
 };
 
-// CREATE FAQ
-export const createFaq = async (req, res) => {
-    req.body.createdBy = req.user.userId;
-    const faq = await Faq.create(req.body);
-
-    res.status(StatusCodes.CREATED).json({ faq });
-};
-
-// GET FAQ
-export const getFaq = async (req, res) => {
-    const faq = await Faq.findById(req.params.id);
-
-    res.status(StatusCodes.OK).json({ faq });
-};
 
 // UPDATE FAQ
 export const updateFaq = async (req, res) => {
