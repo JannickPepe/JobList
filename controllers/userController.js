@@ -2,6 +2,7 @@
 import { StatusCodes } from 'http-status-codes';
 import User from '../models/UserModel.js';
 import Job from '../models/JobModel.js';
+import Faq from '../models/FaqModel.js';
 import cloudinary from 'cloudinary';
 import { formatImage } from '../middleware/multerMiddleware.js';
 
@@ -19,7 +20,8 @@ export const getApplicationStats = async (req, res) => {
 
     const users = await User.countDocuments();
     const jobs = await Job.countDocuments();
-    res.status(StatusCodes.OK).json({ users, jobs });
+    const faqs = await Faq.countDocuments();
+    res.status(StatusCodes.OK).json({ users, jobs, faqs });
 };
 
 //

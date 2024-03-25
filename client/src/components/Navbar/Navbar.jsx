@@ -24,15 +24,15 @@ const NavbarNew = () => {
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item, index) => (
               <li className="hover:scale-110" key={index}>
-                <a className="text-base font-semibold hover:text-red-800" href={item.href}>{item.label}</a>
+                <a className="text-base font-semibold hover:text-violet-800" href={item.href}>{item.label}</a>
               </li>
             ))}
           </ul>
           <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <Link to='/login' className="py-2 px-3 border rounded-md">
+            <Link to='/login' className="py-2 px-3 border rounded-md font-semibold">
               Sign / Demo
             </Link>
-            <Link to='/register' className="text-white bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md" >
+            <Link to='/register' className="text-white font-semibold bg-gradient-to-r from-indigo-500 to-indigo-800 py-2 px-3 rounded-md" >
               Register today
             </Link>
           </div>
