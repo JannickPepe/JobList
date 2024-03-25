@@ -1,11 +1,17 @@
 import { testimonials } from "../../constants";
 
+
 const Testimonials = () => {
+
   return (
     <div className="mb-8 tracking-wide z-50" style={{zIndex:99}}>
-      <h2 className="text-white text-3xl sm:text-5xl lg:text-6xl text-center my-10 lg:my-10 z-50">
+
+      <h2 className="text-white text-3xl sm:text-5xl lg:text-6xl text-center mt-6 mb-3 lg:mt-10 z-50">
         What People are saying
       </h2>
+
+      <h5 className="text-white text-center mb-8 text-base font-normal">Latest Reviews</h5>
+
       <div className="flex flex-wrap justify-center z-50">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="z-50 w-full sm:w-1/2 lg:w-1/3 px-4 py-2 hover:scale-110 transition duration-300 delay-100">
@@ -28,8 +34,10 @@ const Testimonials = () => {
           </div>
         ))}
       </div>
+      
     </div>
   );
+
 };
 
 export default Testimonials;

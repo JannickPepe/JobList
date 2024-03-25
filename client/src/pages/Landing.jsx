@@ -1,8 +1,7 @@
 import { useRef, useState } from 'react';
-import {  FeatureSection, Footer, NavbarNew, Pricing, Testimonials, Workflow } from '../components';
+import {  FeatureSection, Footer, NavbarNew, Testimonials, Workflow, AuroraHero, SquishyCard } from '../components';
 import Background from '../components/Landing/MoleculeBackground';
 import { motion, AnimatePresence } from 'framer-motion';    
-import { AuroraHero } from '../components/Landing/AuraSection';
 
 
 const Landing = () => {
@@ -82,7 +81,10 @@ const Landing = () => {
                         <Workflow />
                     </div>
                     <div ref={refprice} >
+                        {/*
                         <Pricing />
+                         */}
+                        <SquishyCard />
                     </div>
                     <div className="relative bg-gray-900 mt-10 lg:mt-20">
                         <Background />
@@ -111,7 +113,7 @@ const Landing = () => {
                         </AnimatePresence>
                     </div>
                 </div>
-
+                
                 <Footer />
             </div>
         </>

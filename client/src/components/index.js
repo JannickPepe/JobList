@@ -21,3 +21,6 @@ export { default as FeatureSection } from './Landing/FeatureSection';
 export { default as Pricing } from './Landing/Pricing';
 export { default as Testimonials } from './Landing/Testimonials';
 export { default as Workflow } from './Landing/Workflow';
+export { default as SquishyCard } from './Landing/AniPricing';
+export { default as AuroraHero } from './Landing/AuraSection';
+

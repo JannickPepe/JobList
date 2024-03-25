@@ -11,7 +11,7 @@ import Example from "./LoginBtn";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
-export const AuroraHero = () => {
+const AuroraHero = () => {
 
     const color = useMotionValue(COLORS_TOP[0]);
 
@@ -94,3 +94,5 @@ export const AuroraHero = () => {
         </motion.section>
     );
 };
+
+export default AuroraHero;
