@@ -5,9 +5,12 @@ import { checklistItems } from "../../constants";
 const Workflow = () => {
   return (
     <div className="mt-20">
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide">
+      <span className="mx-auto flex justify-center items-center max-w-[120px] bg-neutral-900 text-purple-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
+          WorkFlow
+      </span>
+      <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-10 lg:mt-10 tracking-wide">
         Accelerate your{" "}
-        <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
+        <span className="bg-gradient-to-r from-indigo-500 to-indigo-800 text-transparent bg-clip-text">
           coding workflow.
         </span>
       </h2>

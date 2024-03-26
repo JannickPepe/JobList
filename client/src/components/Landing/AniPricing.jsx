@@ -8,9 +8,11 @@ const SquishyCard = () => {
 
     return (
         <section className="px-4 py-12">
-            <div className="text-center mt-20 mb-8">
+            <span className="mx-auto flex justify-center items-center max-w-[100px] bg-neutral-900 text-purple-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
+                Pricing
+            </span>
+            <div className="text-center mt-10 mb-8">
                 <h3>Pricing List</h3>
-                <h5 className="mt-2 text-base font-normal">Different tiers to choose from!</h5>
             </div>
             <div className="mx-auto w-fit">
                 <Card />

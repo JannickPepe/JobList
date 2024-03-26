@@ -4,18 +4,12 @@ import { testimonials } from "../../constants";
 const Testimonials = () => {
 
   return (
-    <div className="mb-8 tracking-wide z-50" style={{zIndex:99}}>
 
-      <h2 className="text-white text-3xl sm:text-5xl lg:text-6xl text-center mt-6 mb-3 lg:mt-10 z-50">
-        What People are saying
-      </h2>
-
-      <h5 className="text-white text-center mb-8 text-base font-normal">Latest Reviews</h5>
-
+    <div className="my-8 tracking-wide z-50" style={{zIndex:99}}>
       <div className="flex flex-wrap justify-center z-50">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="z-50 w-full sm:w-1/2 lg:w-1/3 px-4 py-2 hover:scale-110 transition duration-300 delay-100">
-            <div className="bg-neutral-900  rounded-md p-6 text-md border hover:bg-slate-800 transition delay-200 duration-200 ease-in-out border-neutral-800 font-thin">
+            <div className="bg-neutral-900 rounded-md p-6 text-md border hover:bg-slate-800 transition delay-200 duration-200 ease-in-out border-neutral-800 font-thin">
               <p className="text-indigo-400 z-50">{testimonial.text}</p>
               <div className="flex mt-8 items-start">
                 <img

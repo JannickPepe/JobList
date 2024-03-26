@@ -4,8 +4,11 @@ import { pricingOptions } from "../../constants";
 const Pricing = () => {
   return (
     <div className="mt-20">
+      <span className="mx-auto flex justify-center items-center max-w-[100px] bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
+          Pricing
+      </span>
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide">
-        Pricing
+        Price List
       </h2>
       <div className="flex flex-wrap">
         {pricingOptions.map((option, index) => (

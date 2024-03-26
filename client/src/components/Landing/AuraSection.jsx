@@ -37,7 +37,7 @@ const AuroraHero = () => {
         >
         <div className="relative z-10 flex flex-col items-center">
             <span className="mb-1.5 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm">
-                JobList Now Live!
+                Beta Now Live!
             </span>
             <h1 className="max-w-3xl bg-gradient-to-br from-white to-gray-400 bg-clip-text text-center text-3xl font-medium leading-tight text-transparent sm:text-5xl sm:leading-tight md:text-7xl md:leading-tight">
                 Decrease your SaaS churn by over 90%
