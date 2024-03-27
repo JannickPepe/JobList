@@ -13,11 +13,11 @@ const NavbarNew = () => {
 
   return (
     <nav className="sticky top-0 py-3 bg-white border-b border-neutral-700/80" style={{zIndex:99}}>
-      <div className="container px-4 mx-auto relative lg:text-sm">
+      <div className="px-12 mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
             <a href="/" className="flex items-center hover:scale-110">
-              <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
+              <img className="h-10 w-10 mr-1" src={logo} alt="Logo" />
               <span className="text-xl tracking-tight">JobList</span>
             </a>
           </div>
@@ -29,10 +29,10 @@ const NavbarNew = () => {
             ))}
           </ul>
           <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <Link to='/login' className="py-2 px-3 border rounded-md font-semibold">
+            <Link to='/login' className="py-2 px-3 border rounded-md font-semibold hover:text-indigo-500">
               Sign / Demo
             </Link>
-            <Link to='/register' className="text-white font-semibold bg-gradient-to-r from-indigo-500 to-indigo-800 py-2 px-3 rounded-md" >
+            <Link to='/register' className="text-white hover:text-black font-semibold bg-gradient-to-r from-indigo-500 to-indigo-800 py-2 px-3 rounded-md" >
               Register today
             </Link>
           </div>
@@ -55,7 +55,7 @@ const NavbarNew = () => {
               <Link to='/login' className="py-2 px-3 border rounded-md">
                 Sign In
               </Link>
-              <Link to='/register' className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800">
+              <Link to='/register' className="py-2 px-3 rounded-md bg-gradient-to-r from-indigo-500 to-indigo-800">
                 Register today
               </Link>
             </div>

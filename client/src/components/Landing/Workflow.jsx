@@ -1,6 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
 import codeImg from "../../assets/code.jpg";
 import { checklistItems } from "../../constants";
+import CustomKanban from "./Kanban";
 
 const Workflow = () => {
   return (
@@ -32,6 +33,8 @@ const Workflow = () => {
           ))}
         </div>
       </div>
+
+      <CustomKanban />
     </div>
   );
 };
