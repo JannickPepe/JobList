@@ -34,27 +34,27 @@ const Landing = () => {
             <nav className='hidden md:block sticky top-16 bg-violet-400' style={{zIndex:99}}>
                 <ul className="grid lg:grid-flow-col text-sm font-semibold text-center text-white">
                     <li>
-                        <a onClick={handleClickHero} href="#page1" className="flex justify-center border-b-4 border-transparent hover:text-black hover:font-semibold hover:border-indigo-500 py-2">
+                        <a onClick={handleClickHero} href="#section1" className="flex justify-center border-b-4 border-transparent hover:text-black hover:font-semibold hover:border-indigo-500 py-2">
                             Introduction
                         </a>
                     </li>
                     <li>
-                        <a onClick={handleClickFeat} href="#page2" className="flex justify-center border-b-4 border-transparent hover:text-black hover:font-semibold hover:border-indigo-500 py-2">
+                        <a onClick={handleClickFeat} href="#section2" className="flex justify-center border-b-4 border-transparent hover:text-black hover:font-semibold hover:border-indigo-500 py-2">
                             Features
                         </a>
                     </li>
                     <li>
-                        <a onClick={handleClickkWork} href="#page3" className="flex justify-center border-b-4 border-transparent hover:text-black hover:font-semibold hover:border-indigo-500 py-2">
+                        <a onClick={handleClickkWork} href="#section3" className="flex justify-center border-b-4 border-transparent hover:text-black hover:font-semibold hover:border-indigo-500 py-2">
                             Workflow
                         </a>
                     </li>
                     <li>
-                        <a onClick={handleClickPrice} href="#page4" className="flex justify-center border-b-4 border-transparent hover:text-black hover:font-semibold hover:border-indigo-500 py-2">
+                        <a onClick={handleClickPrice} href="#section4" className="flex justify-center border-b-4 border-transparent hover:text-black hover:font-semibold hover:border-indigo-500 py-2">
                             Pricing
                         </a>
                     </li>
                     <li>
-                        <a onClick={handleClickTesti} href="#page5" className="flex justify-center border-b-4 border-transparent hover:text-black hover:font-semibold hover:border-indigo-500 py-2">
+                        <a onClick={handleClickTesti} href="#section5" className="flex justify-center border-b-4 border-transparent hover:text-black hover:font-semibold hover:border-indigo-500 py-2">
                             Testimonials
                         </a>
                     </li>

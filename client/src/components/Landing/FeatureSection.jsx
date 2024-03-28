@@ -14,7 +14,7 @@ const FeatureSection = () => {
           </span>
         </h2>
       </div>
-      <div className="grid lg:grid-cols-3 lg:grid-rows-2 mt-10 lg:mt-14 gap-6 bg-black px-6 lg:p-8 rounded-md">
+      <div className="grid lg:grid-cols-3 lg:grid-rows-2 mt-10 lg:mt-14 gap-6 bg-black px-6 p-4 md:p-6 lg:p-8 rounded-md">
         {features.map((feature, index) => (
           <div key={index} className="card-wrapper h-[220px] w-full">
             <div className="flex card-content">

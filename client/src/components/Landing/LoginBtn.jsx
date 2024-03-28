@@ -68,7 +68,7 @@ const EncryptButton = () => {
         }}
         onMouseEnter={scramble}
         onMouseLeave={stopScramble}
-        className="group relative overflow-hidden rounded-lg border-[1px] border-neutral-500 bg-violet-600 px-4 py-2 font-mono font-medium uppercase text-neutral-300 transition-colors hover:text-slate-700"
+        className="group relative overflow-hidden rounded-lg border-[1px] border-neutral-500 bg-gray-500 px-4 py-2 font-mono font-medium uppercase text-neutral-300 transition-colors"
         >
             <div className="relative z-10 flex items-center gap-2">
                 <FiLock />
@@ -89,7 +89,7 @@ const EncryptButton = () => {
             duration: 1,
             ease: "linear",
             }}
-            className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-indigo-400/0 from-40% via-red-400/100 to-indigo-400/0 to-60% opacity-0 transition-opacity group-hover:opacity-100"
+            className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-indigo-400/0 from-40% via-red-600 to-red-400 to-60% opacity-0 transition-opacity group-hover:opacity-100"
         />
         </motion.button>
     );
