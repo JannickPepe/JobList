@@ -32,6 +32,16 @@ const links = [
     icon: <MdQueryStats />,
   },
   {
+    text: 'add kanban',
+    path: 'add-kanban',
+    icon: <FaWpforms />,
+  },
+  {
+    text: 'all kanbans',
+    path: 'all-kanbans',
+    icon: <MdQueryStats />,
+  },
+  {
     text: 'profile',
     path: 'profile',
     icon: <ImProfile />,

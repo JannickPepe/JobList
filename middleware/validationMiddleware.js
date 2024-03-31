@@ -6,6 +6,7 @@ import { JOB_STATUS, JOB_TYPE } from '../utils/constants.js';
 import Job from '../models/JobModel.js';
 import Faq from '../models/FaqModel.js';
 import User from '../models/UserModel.js';
+import Kanban from '../models/KanbanModel.js';
 
 
 //
@@ -23,6 +24,10 @@ const withValidationErrors = (validateValues) => {
                 }
 
                 if (errorMessages[0].startsWith('no faq')) {
+                    throw new NotFoundError(errorMessages);
+                }
+
+                if (errorMessages[0].startsWith('no kanban')) {
                     throw new NotFoundError(errorMessages);
                 }
 
@@ -57,6 +62,14 @@ export const validateFaqInput = withValidationErrors([
 ]);
 
 //
+export const validateKanbanInput = withValidationErrors([
+    body('backlog').notEmpty().withMessage('backlog is required'),
+    body('todo').notEmpty().withMessage('todo is required'),
+    body('doing').notEmpty().withMessage('doing is required'),
+    body('complete').notEmpty().withMessage('complete is required'),
+]);
+
+//
 export const validateIdParam = withValidationErrors([
     param('id').custom(async (value, { req }) => {
         const isValidMongoId = mongoose.Types.ObjectId.isValid(value);
@@ -84,6 +97,23 @@ export const validateIdFaqParam = withValidationErrors([
 
         const isAdmin = req.user.role === 'admin';
         const isOwner = req.user.userId === faq.createdBy.toString()
+        
+        if(!isAdmin && !isOwner) throw new UnauthorizedError('not authorized to access this route')
+    }),
+]);
+
+//
+export const validateIdKanbanParam = withValidationErrors([
+    param('id').custom(async (value, { req }) => {
+        const isValidMongoId = mongoose.Types.ObjectId.isValid(value);
+
+
+        if (!isValidMongoId) throw new BadRequestError('invalid MongoDB id');
+        const kanban = await Kanban.findById(value);
+        if (!kanban) throw new NotFoundError(`no kanban with id : ${value}`);
+
+        const isAdmin = req.user.role === 'admin';
+        const isOwner = req.user.userId === kanban.createdBy.toString()
         
         if(!isAdmin && !isOwner) throw new UnauthorizedError('not authorized to access this route')
     }),

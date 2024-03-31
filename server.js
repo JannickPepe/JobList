@@ -22,6 +22,7 @@ import { authenticateUser } from './middleware/authMiddleware.js';
 import cookieParser from 'cookie-parser';
 // ROUTERS
 import jobRouter from "./routes/jobRouter.js";
+import kanbanRouter from "./routes/kanbanRouter.js";
 import faqRouter from "./routes/faqRouter.js";
 import faqClientRouter from "./routes/faqClientRouter.js";
 import authRouter from "./routes/authRouter.js"
@@ -77,6 +78,7 @@ app.use(mongoSanitize());
 
 // API ROUTE
 app.use('/api/v1/jobs', authenticateUser, jobRouter);
+app.use('/api/v1/kanbans', authenticateUser, kanbanRouter);
 app.use('/api/v1/faqs', authenticateUser, faqRouter);
 app.use('/api/v1/faqs-client', faqClientRouter);
 app.use('/api/v1/users', authenticateUser, userRouter);

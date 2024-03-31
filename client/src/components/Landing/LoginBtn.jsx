@@ -14,7 +14,7 @@ const Example = () => {
 };
 
 // Setting up the btn animation const
-const TARGET_TEXT = "Login / Demo";
+const TARGET_TEXT = "Login/Demo";
 const CYCLES_PER_LETTER = 2;
 const SHUFFLE_TIME = 50;
 const CHARS = "!@#$%^&*():{};|,.<>/?";

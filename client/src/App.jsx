@@ -2,8 +2,8 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HomeLayout, Landing, Register, Login, DashboardLayout, Error, 
-  AddJob, Stats, AllJobs, Profile, Admin, EditJob, AddFaq, AllFaqs, EditFaq, 
-} from './pages';
+  AddJob, Stats, AllJobs, Profile, Admin, EditJob, AddFaq, AllFaqs, EditFaq,
+  JoblistPage, AboutPage, ContactPage, AddKanban, AllKanbans, EditKanban,} from './pages';
 
 import { action as registerAction } from './pages/Register';
 import { action as loginAction } from './pages/Login';
@@ -18,6 +18,11 @@ import { loader as allFaqsLoader } from './pages/FAQ/AllFaqs';
 import { loader as editFaqLoader } from './pages/FAQ/EditFaq';
 import { action as editFaqAction } from './pages/FAQ/EditFaq';
 import { action as deleteFaqAction } from './pages/FAQ/DeleteFaq';
+import { action as addKanbanAction } from './pages/Kanban/AddKanban';
+import { loader as allKanbansLoader } from './pages/Kanban/AllKanbans';
+import { loader as editKanbanLoader } from './pages/Kanban/EditKanban';
+import { action as editKanbanAction } from './pages/Kanban/EditKanban';
+import { action as deleteKanbanAction } from './pages/Kanban/DeleteKanban';
 import { loader as adminLoader } from './pages/Admin';
 import { action as profileAction } from './pages/Profile';
 import { loader as statsLoader } from './pages/Stats';
@@ -53,6 +58,18 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
+      },
+      {
+        path: 'joblist',
+        element: <JoblistPage />,
+      },
+      {
+        path: 'about',
+        element: <AboutPage />,
+      },
+      {
+        path: 'contact',
+        element: <ContactPage />,
       },
       {
         path: 'register',
@@ -98,6 +115,17 @@ const router = createBrowserRouter([
             errorElement: <ErrorElement />
           },
           {
+            path: 'add-kanban',
+            element: <AddKanban />,
+            action: addKanbanAction(queryClient),
+          },
+          {
+            path: 'all-kanbans',
+            element: <AllKanbans />,
+            loader: allKanbansLoader(queryClient),
+            errorElement: <ErrorElement />
+          },
+          {
             path: 'profile',
             element: <Profile />,
             action: profileAction(queryClient),
@@ -126,6 +154,16 @@ const router = createBrowserRouter([
           { 
             path: 'delete-faq/:id', 
             action: deleteFaqAction(queryClient), 
+          },
+          {
+            path: 'edit-kanban/:id',
+            element: <EditKanban />,
+            loader: editKanbanLoader(queryClient),
+            action: editKanbanAction(queryClient),
+          },
+          { 
+            path: 'delete-kanban/:id', 
+            action: deleteKanbanAction(queryClient), 
           },
         ],
       },
