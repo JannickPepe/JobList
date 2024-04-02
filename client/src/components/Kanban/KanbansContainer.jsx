@@ -17,10 +17,10 @@ const KanbansContainer = () => {
 
     return (
         <>
-            <h5>
-                {totalKanbans} kanban{kanbans.length > 1 && 's'} found
+            <h5 className='pt-10 lg:pt-14'>
+                {totalKanbans} kanban-board{kanbans.length > 1 && 's'} found:
             </h5>
-            <hr className='mt-1 pb-6'/>
+            <hr className='mt-1 pb-2'/>
             <div className='kanbans'>
                 {kanbans.map((kanban) => {
                 return <Kanban key={kanban._id} {...kanban} />;

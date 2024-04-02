@@ -16,6 +16,7 @@ export const getAllKanbans = async (req, res) => {
     
     if (search) {
         queryObject.$or = [
+            { name: { $regex: search, $options: 'i' } },
             { backlog: { $regex: search, $options: 'i' } },
             { todo: { $regex: search, $options: 'i' } },
             { doing: { $regex: search, $options: 'i' } },

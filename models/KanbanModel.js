@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 const KanbanSchema = new mongoose.Schema(
     {
+        name: String,
         backlog: String,
         todo: String,
         doing: String,

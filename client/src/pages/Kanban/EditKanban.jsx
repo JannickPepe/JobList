@@ -56,6 +56,7 @@ const EditKanban = () => {
             <Form method='post' className='form'>
                 <h4 className='form-title'>edit kanban</h4>
                 <div className='form-center'>
+                    <FormRow type='text' name='name' defaultValue={kanban.name} />
                     <FormRow type='text' name='backlog' defaultValue={kanban.backlog} />
                     <FormRow type='text' name='todo' defaultValue={kanban.todo} />
                     <FormRow type='text' name='doing' defaultValue={kanban.doing} />

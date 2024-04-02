@@ -63,6 +63,7 @@ export const validateFaqInput = withValidationErrors([
 
 //
 export const validateKanbanInput = withValidationErrors([
+    body('name').notEmpty().withMessage('name is required'),
     body('backlog').notEmpty().withMessage('backlog is required'),
     body('todo').notEmpty().withMessage('todo is required'),
     body('doing').notEmpty().withMessage('doing is required'),

@@ -31,6 +31,7 @@ const AddJob = () => {
             <Form method='post' className='form'>
                 <h4 className='form-title'>add kanban</h4>
                 <div className='form-center'>
+                <FormRow type='text' name='name' />
                     <FormRow type='text' name='backlog' />
                     <FormRow type='text' name='todo' />
                     <FormRow type='text' name='doing' />
