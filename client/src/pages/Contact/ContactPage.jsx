@@ -46,12 +46,12 @@ const TerminalHeader = () => {
 
     return (
         <div className="w-full p-3 bg-slate-900 flex items-center gap-1 sticky top-0">
-        <div className="w-3 h-3 rounded-full bg-red-500" />
-        <div className="w-3 h-3 rounded-full bg-yellow-500" />
-        <div className="w-3 h-3 rounded-full bg-green-500" />
-        <span className="text-sm text-slate-200 font-semibold absolute left-[50%] -translate-x-[50%]">
-            jannickpedersen@live.dk
-        </span>
+            <div className="w-3 h-3 rounded-full bg-red-500" />
+            <div className="w-3 h-3 rounded-full bg-yellow-500" />
+            <div className="w-3 h-3 rounded-full bg-green-500" />
+            <span className="text-sm text-slate-200 font-semibold absolute left-[50%] -translate-x-[50%]">
+                jannickpedersen@live.dk
+            </span>
         </div>
     );
 
@@ -86,23 +86,23 @@ const TerminalBody = ({ containerRef, inputRef }) => {
 
     return (
         <div className="p-2 text-slate-100 text-lg">
-        <InitialText />
-        <PreviousQuestions questions={questions} />
-        <CurrentQuestion curQuestion={curQuestion} />
-        {curQuestion ? (
-            <CurLine
-            text={text}
-            focused={focused}
-            setText={setText}
-            setFocused={setFocused}
-            inputRef={inputRef}
-            command={curQuestion?.key || ""}
-            handleSubmitLine={handleSubmitLine}
-            containerRef={containerRef}
-            />
-        ) : (
-            <Summary questions={questions} setQuestions={setQuestions} />
-        )}
+            <InitialText />
+            <PreviousQuestions questions={questions} />
+            <CurrentQuestion curQuestion={curQuestion} />
+            {curQuestion ? (
+                <CurLine
+                text={text}
+                focused={focused}
+                setText={setText}
+                setFocused={setFocused}
+                inputRef={inputRef}
+                command={curQuestion?.key || ""}
+                handleSubmitLine={handleSubmitLine}
+                containerRef={containerRef}
+                />
+            ) : (
+                <Summary questions={questions} setQuestions={setQuestions} />
+            )}
         </div>
     );
 
@@ -112,10 +112,10 @@ const TerminalBody = ({ containerRef, inputRef }) => {
 const InitialText = () => {
     return (
         <>
-        <p>Hey there! We're excited to link 🔗</p>
-        <p className="whitespace-nowrap overflow-hidden font-light">
-            ------------------------------------------------------------------------
-        </p>
+            <p>Hey there! We're excited to link 🔗</p>
+            <p className="whitespace-nowrap overflow-hidden font-light">
+                ------------------------------------------------------------------------
+            </p>
         </>
     );
 };
@@ -124,25 +124,25 @@ const InitialText = () => {
 const PreviousQuestions = ({ questions }) => {
     return (
         <>
-        {questions.map((q, i) => {
-            if (q.complete) {
-            return (
-                <Fragment key={i}>
-                <p>
-                    {q.text || ""}
-                    {q.postfix && (
-                    <span className="text-violet-300">{q.postfix}</span>
-                    )}
-                </p>
-                <p className="text-emerald-300">
-                    <FiCheckCircle className="inline-block mr-2" />
-                    <span>{q.value}</span>
-                </p>
-                </Fragment>
-            );
-            }
-            return <Fragment key={i}></Fragment>;
-        })}
+            {questions.map((q, i) => {
+                if (q.complete) {
+                    return (
+                        <Fragment key={i}>
+                        <p>
+                            {q.text || ""}
+                            {q.postfix && (
+                            <span className="text-violet-300">{q.postfix}</span>
+                            )}
+                        </p>
+                        <p className="text-emerald-300">
+                            <FiCheckCircle className="inline-block mr-2" />
+                            <span>{q.value}</span>
+                        </p>
+                        </Fragment>
+                    );
+                }
+                return <Fragment key={i}></Fragment>;
+            })}
         </>
     );
 
@@ -155,10 +155,10 @@ const CurrentQuestion = ({ curQuestion }) => {
 
     return (
         <p>
-        {curQuestion.text || ""}
-        {curQuestion.postfix && (
-            <span className="text-violet-300">{curQuestion.postfix}</span>
-        )}
+            {curQuestion.text || ""}
+            {curQuestion.postfix && (
+                <span className="text-violet-300">{curQuestion.postfix}</span>
+            )}
         </p>
     );
 
@@ -175,7 +175,7 @@ const Summary = ({ questions, setQuestions }) => {
 
     const handleSend = () => {
         const formData = questions.reduce((acc, val) => {
-        return { ...acc, [val.key]: val.value };
+            return { ...acc, [val.key]: val.value };
         }, {});
 
         // Send this data to your server or whatever :)
@@ -186,36 +186,36 @@ const Summary = ({ questions, setQuestions }) => {
 
     return (
         <>
-        <p>Beautiful! Here's what we've got:</p>
-        {questions.map((q) => {
-            return (
-            <p key={q.key}>
-                <span className="text-blue-300">{q.key}:</span> {q.value}
-            </p>
-            );
-        })}
-        <p>Look good?</p>
-        {complete ? (
-            <p className="text-emerald-300">
-            <FiCheckCircle className="inline-block mr-2" />
-            <span>Sent! We'll get back to you ASAP 😎</span>
-            </p>
-        ) : (
-            <div className="flex gap-2 mt-2">
-            <button
-                onClick={handleReset}
-                className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-slate-100 text-black"
-            >
-                Restart
-            </button>
-            <button
-                onClick={handleSend}
-                className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-indigo-500 text-white"
-            >
-                Send it!
-            </button>
-            </div>
-        )}
+            <p>Beautiful! Here's what we've got:</p>
+            {questions.map((q) => {
+                return (
+                <p key={q.key}>
+                    <span className="text-blue-300">{q.key}:</span> {q.value}
+                </p>
+                );
+            })}
+            <p>Look good?</p>
+            {complete ? (
+                <p className="text-emerald-300">
+                <FiCheckCircle className="inline-block mr-2" />
+                <span>Sent! We'll get back to you ASAP 😎</span>
+                </p>
+            ) : (
+                <div className="flex gap-2 mt-2">
+                    <button
+                        onClick={handleReset}
+                        className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-slate-100 text-black"
+                    >
+                        Restart
+                    </button>
+                    <button
+                        onClick={handleSend}
+                        className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-indigo-500 text-white"
+                    >
+                        Send it!
+                    </button>
+                </div>
+            )}
         </>
     );
 
@@ -246,7 +246,7 @@ const CurLine = ({text, focused, setText, setFocused, inputRef, command, handleS
 
     useEffect(() => {
         return () => setFocused(false);
-    }, []);
+    }, [setFocused]);
 
     return (
         <>

@@ -64,9 +64,6 @@ const Landing = () => {
             <div className="">
                 <div ref={refhero}>
                     <AuroraHero />
-                    {/*
-                    <HeroSection />
-                     */}
                 </div>
                 <div className="max-w-[85rem] mx-auto pt-10 lg:px-6">
                     <div ref={reffeat}>

@@ -11,14 +11,14 @@ const Hero = () => {
                         <div className="w-full px-4">
                         <div className="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
                             <span className="mb-2 block text-lg underline font-semibold text-primary">
-                            Keeping Track
+                                Keeping Track
                             </span>
                             <h2 className="mb-4 text-3xl font-bold text-black sm:text-4xl md:text-[40px]">
-                            Our Recent News
+                                Our Recent News
                             </h2>
                             <p className="text-base text-body-color dark:text-dark-6">
-                            There are many variations of passages of Lorem Ipsum available
-                            but the majority have suffered alteration in some form.
+                                There are many variations of passages of Lorem Ipsum available
+                                but the majority have suffered alteration in some form.
                             </p>
                         </div>
                         </div>

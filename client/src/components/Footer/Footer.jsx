@@ -1,47 +1,57 @@
 import logo from '../../assets/logo.png';
+import FooterInput from './FooterInput';
 
 const Footer = () => {
 
     return (
         <footer className="pb-6">
 
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8">
                     
                     <div className="col-span-full mb-10 lg:col-span-1 lg:mb-0">
                         <img className='h-20 w-20' src={logo} alt='logo' />
                         <p className="py-8 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left">Trusted in more than 100 countries & 5 million customers. Have any query ?</p>
-                        <a href="javascript:;"  className="py-2.5 px-5 h-9 block w-fit bg-indigo-600 rounded-full shadow-sm text-xs text-white mx-auto transition-all  duration-500 hover:bg-indigo-700 lg:mx-0">
-                            Contact us
-                        </a>
+                        <FooterInput />
                     </div>
                 
                     <div className="lg:mx-auto text-left ">
                         <h4 className="text-lg text-gray-900 font-medium mb-7">Pages</h4>
                         <ul className="text-sm  transition-all duration-500">
-                            <li className="mb-6"><a href="javascript:;"  className="text-gray-600 hover:text-gray-900">Home</a></li>
-                            <li className="mb-6"><a href="javascript:;"  className=" text-gray-600 hover:text-gray-900">Job List</a></li>
-                            <li className="mb-6"><a href="javascript:;"  className=" text-gray-600 hover:text-gray-900">About</a></li>
-                            <li><a href="javascript:;"  className=" text-gray-600 hover:text-gray-900">Contact</a></li>
+                            <li className="mb-6 hover:scale-110 transition-transform"><a href="/" className="text-gray-600 font-semibold hover:text-gray-900 hover:border-b border-indigo-500">Home</a></li>
+                            <li className="mb-6 hover:scale-110 transition-transform"><a href="/joblist" className=" text-gray-600 font-semibold hover:text-gray-900 hover:border-b border-indigo-500">Job List</a></li>
+                            <li className="mb-6 hover:scale-110 transition-transform"><a href="/about" className=" text-gray-600 font-semibold hover:text-gray-900 hover:border-b border-indigo-500">About</a></li>
+                            <li className='hover:scale-110 transition-transform'><a href="/contact" className=" text-gray-600 font-semibold hover:text-gray-900 hover:border-b border-indigo-500">Contact</a></li>
                         </ul>
                     </div>
                 
                     <div className="lg:mx-auto text-left ">
                         <h4 className="text-lg text-gray-900 font-medium mb-7">Products</h4>
                         <ul className="text-sm  transition-all duration-500">
-                            <li className="mb-6"><a href="javascript:;"  className="text-gray-600 hover:text-gray-900">Free</a></li>
-                            <li className="mb-6"><a href="javascript:;"  className=" text-gray-600 hover:text-gray-900">Pro</a></li>
-                            <li className="mb-6"><a href="javascript:;"  className=" text-gray-600 hover:text-gray-900">Enterprise</a></li>
-                            <li><a href="javascript:;"  className=" text-gray-600 hover:text-gray-900">Components Library</a></li>
+                            <li className="mb-6 hover:scale-110 transition-transform"><a href="javascript:;" className="text-gray-600 font-semibold hover:text-gray-900 hover:border-b border-indigo-500">
+                                Free</a>
+                            </li>
+                            <li className="mb-6 hover:scale-110 transition-transform"><a href="javascript:;" className=" text-gray-600 font-semibold hover:text-gray-900 hover:border-b border-indigo-500">
+                                Pro</a>
+                            </li>
+                            <li className="mb-6 hover:scale-110 transition-transform"><a href="javascript:;" className=" text-gray-600 font-semibold hover:text-gray-900 hover:border-b border-indigo-500">
+                                Enterprise</a>
+                            </li>
                         </ul>
                     </div>
                 
                     <div className="lg:mx-auto text-left">
                         <h4 className="text-lg text-gray-900 font-medium mb-7">Resources</h4>
                         <ul className="text-sm  transition-all duration-500">
-                            <li className="mb-6"><a href="javascript:;"  className="text-gray-600 hover:text-gray-900">Job List</a></li>
-                            <li className="mb-6"><a href="javascript:;"  className=" text-gray-600 hover:text-gray-900">FAQs</a></li>
-                            <li className="mb-6"><a href="javascript:;"  className=" text-gray-600 hover:text-gray-900">Quick Start</a></li>
+                            <li className='mb-6 hover:scale-110 transition-transform'><a href="https://www.hover.dev/components" className=" text-gray-600 font-semibold hover:text-gray-900 hover:border-b border-indigo-500">
+                                Components Library</a>
+                            </li>
+                            <li className="mb-6 hover:scale-110 transition-transform"><a href="javascript:;" className=" text-gray-600 font-semibold hover:text-gray-900 hover:border-b border-indigo-500">
+                                FAQs</a>
+                            </li>
+                            <li className="hover:scale-110 transition-transform"><a href="javascript:;" className=" text-gray-600 font-semibold hover:text-gray-900 hover:border-b border-indigo-500">
+                                Quick Start</a>
+                            </li>
                         </ul>
                     </div>
                     
