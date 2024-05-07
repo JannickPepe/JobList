@@ -62,7 +62,7 @@ app.use(
 
                 "script-src": ["'self'", "'unsafe-eval'", "'unsafe-inline'", "data:"],
 
-                "img-src": ["'self'", "'unsafe-inline'", "data:"],
+                "img-src": ["'self'", "'unsafe-inline'", "https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1734&q=80" ,"data:"],
 
                 "font-src": ["'self'", "'unsafe-inline'", "https://pro.fontawesome.com/", "https://fonts.gstatic.com/"],
 
