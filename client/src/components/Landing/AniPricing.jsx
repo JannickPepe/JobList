@@ -45,10 +45,10 @@ const Card = () => {
                 >
                     <div className="relative z-10 text-white">
                         <span className="mb-3 block w-fit rounded-full bg-white px-4 py-1 text-sm font-light text-white">
-                        <p className="text-black text-4xl mb-3">
+                        <p className="text-black text-2xl mb-2">
                                 {option.title}
                                 {option.title === "Pro" && (
-                                <span className="bg-gradient-to-r from-red-500 to-red-600 text-transparent bg-clip-text text-xl mb-4 ml-2">
+                                <span className="bg-gradient-to-r from-violet-500 to-violet-600 text-transparent bg-clip-text text-xl mb-4 ml-2 font-bold">
                                     (Most Popular)
                                 </span>
                                 )}

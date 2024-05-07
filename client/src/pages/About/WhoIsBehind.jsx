@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-
+import avatarimg from "../../assets/avatar.jpg";
 
 const WhoIsBehind = () => {
 
@@ -17,21 +17,21 @@ const WhoIsBehind = () => {
         <div className="grid place-content-center overflow-hidden px-8 py-24 text-slate-50">
             <div className="relative -ml-[100px] h-[450px] w-[350px] md:-ml-[175px]">
                 <Card
-                    imgUrl="https://i.ibb.co/8mjNsj8/avatar.jpg"
+                    imgUrl={avatarimg}
                     author="Jannick Pedersen Director @ JobList"
                     testimonial="I feel like I've learned as much from X as I did completing my masters. It's the first thing I read every morning."
                     handleShuffle={handleShuffle}
                     position={order[0]}
                 />
                 <Card
-                    imgUrl="https://i.ibb.co/8mjNsj8/avatar.jpg"
+                    imgUrl={avatarimg}
                     author="Jannick Pedersen Director @ JobList"
                     testimonial="My boss thinks I know what I'm doing. Honestly, I just read this newsletter."
                     handleShuffle={handleShuffle}
                     position={order[1]}
                 />
                 <Card
-                    imgUrl="https://i.ibb.co/8mjNsj8/avatar.jpg"
+                    imgUrl={avatarimg}
                     author="Jannick Pedersen Director @ JobList"
                     testimonial="Can not believe this is free. If X was $5,000 a month, it would be worth every penny. I plan to name my next child after X."
                     handleShuffle={handleShuffle}

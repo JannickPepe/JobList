@@ -3,6 +3,10 @@ import { Footer, NavbarNew } from "../../components";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import ShuffleSortTable from "./JobListTable";
+import frontendimg from "../../assets/frontend.jpg";
+import backendimg from "../../assets/backend.jpg";
+import fullstackimg from "../../assets/fullstack.jpg";
+import UIimg from "../../assets/UI.jpg";
 
 
 const JoblistPage = () => {
@@ -17,22 +21,22 @@ const JoblistPage = () => {
                     <Card
                     heading="Frontend"
                     description="See our full display of Frontend job applications"
-                    imgSrc="https://i.ibb.co/3M34XWF/frontend.jpg"
+                    imgSrc={frontendimg}
                     />
                     <Card
                     heading="Backend"
                     description="See our full display of Backend job applications"
-                    imgSrc="https://i.ibb.co/BK9rT6Z/backend.jpg"
+                    imgSrc={backendimg}
                     />
                     <Card
                     heading="Full-Stack"
                     description="See our full display of Full-Stack job applications"
-                    imgSrc="https://i.ibb.co/QbRbVTp/fullstack.jpg"
+                    imgSrc={fullstackimg}
                     />
                     <Card
                     heading="Web Dev & UI"
                     description="See our full display of Web Development UI job applications"
-                    imgSrc="https://i.ibb.co/7z3C3xM/UI.jpg"
+                    imgSrc={UIimg}
                     />
                 </div>
             </div>
